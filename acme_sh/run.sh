@@ -19,7 +19,7 @@ done
 /root/.acme.sh/acme.sh --register-account -m ${ACCOUNT}
 
 /root/.acme.sh/acme.sh --issue "${DOMAIN_ARR[@]}" \
---dns "$DNS_PROVIDER"
+--dns "$DNS_PROVIDER" --insecure
 
 /root/.acme.sh/acme.sh --install-cert "${DOMAIN_ARR[@]}" \
 --fullchain-file "/ssl/${CERTFILE}" \
