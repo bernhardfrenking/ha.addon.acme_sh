@@ -13,7 +13,7 @@ done
 
 DOMAIN_ARR=()
 for domain in $DOMAINS; do
-    DOMAIN_ARR+=(-d "$domain")
+    DOMAIN_ARR+=(-d "$domain ")
 done
 
 /root/.acme.sh/acme.sh --register-account -m ${ACCOUNT}
