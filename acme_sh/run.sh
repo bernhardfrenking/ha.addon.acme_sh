@@ -16,6 +16,8 @@ for domain in $DOMAINS; do
     DOMAIN_ARR+=(-d "$domain ")
 done
 
+echo "Domains: $DOMAIN_ARR"
+
 /root/.acme.sh/acme.sh --register-account -m ${ACCOUNT}
 
 /root/.acme.sh/acme.sh --issue --dns "$DNS_PROVIDER" "${DOMAIN_ARR[@]}" --debug
