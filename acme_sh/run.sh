@@ -20,9 +20,9 @@ echo "Domains: $DOMAIN_ARR"
 
 /root/.acme.sh/acme.sh --register-account -m ${ACCOUNT}
 
-/root/.acme.sh/acme.sh --issue --dns "$DNS_PROVIDER" "${DOMAIN_ARR[@]}" --debug
+/root/.acme.sh/acme.sh --issue --dns "$DNS_PROVIDER" -d ha.frenking.eu --debug
 
-/root/.acme.sh/acme.sh --install-cert "${DOMAIN_ARR[@]}" \
+/root/.acme.sh/acme.sh --install-cert ha.frenking.eu
 --fullchain-file "/ssl/${CERTFILE}" \
 --key-file "/ssl/${KEYFILE}" \
 
