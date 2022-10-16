@@ -14,10 +14,7 @@
     "domains": ["ha.frenking.eu"],
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
-    "dns": {provider: dns_domeneshop
-            env:
-              - DOMENESHOP_Token=2XDBfMflmvY3vy4J
-              - DOMENESHOP_Secret=}
+    "dns": {}
   },
   "schema": {
     "account": "str",
