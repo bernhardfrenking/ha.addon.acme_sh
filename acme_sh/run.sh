@@ -13,16 +13,15 @@ done
 
 DOMAIN_ARR=()
 for domain in $DOMAINS; do
-    DOMAIN_ARR+=(-d "$domain ")
+    DOMAIN_ARR+=(--domain "$domain")
 done
-
-echo "Domains: $DOMAIN_ARR"
 
 /root/.acme.sh/acme.sh --register-account -m ${ACCOUNT}
 
-/root/.acme.sh/acme.sh --issue --dns "$DNS_PROVIDER" --domain "ha.frenking.eu" --insecure --debug
+/root/.acme.sh/acme.sh --issue "${DOMAIN_ARR[@]}" \
+--dns "$DNS_PROVIDER"
 
-/root/.acme.sh/acme.sh --install-cert ha.frenking.eu
+/root/.acme.sh/acme.sh --install-cert "${DOMAIN_ARR[@]}" \
 --fullchain-file "/ssl/${CERTFILE}" \
 --key-file "/ssl/${KEYFILE}" \
 
